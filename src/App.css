@@ -1,0 +1,327 @@
+*{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: 
+    radial-gradient(circle at top left, RGB(121, 101, 193, 0.25), transparent 30%),
+    radial-gradient(circle at bottom right, RGB(227, 208, 149, 0.12), transparent 25%),
+    linear-gradient(135deg, #0E2148, #1a2f66);
+  color: #fff;
+}
+
+.app{
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+
+}
+
+.app-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-container {
+  display: flex;
+  justify-content: right;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #7A6CFF, #5A4BFF);
+  cursor: pointer;
+  box-shadow:
+    0 0 10px rgba(122, 108, 255, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: linear-gradient(135deg, #887bfd, #6658f7);
+}
+
+.active-filter {
+    transform: translateY(-1.5px);
+
+    box-shadow:
+      0 0 15px rgba(122, 108, 255, 0.6),
+      0 0 30px rgba(122, 108, 255, 0.4),
+      0 10px 25px rgba(0, 0, 0, 0.25);
+
+}
+
+.tasks-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 200px;
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tasks-container::-webkit-scrollbar {
+  display: none;
+}
+
+.no-tasks-message {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.task-div {
+  width: 100%;
+  align-items: center;
+}
+
+.input-div {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.input-div input {
+  background: #f5f5f500;
+  color: #fff;
+  flex: 1;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.save-btn {
+  padding: 0 15px;
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.15),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.checkmark {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkmark.done {
+  border: 2px solid #6EE7B7;
+  background-color: #6EE7B7;
+  box-shadow:
+    0 0 8px rgba(110, 231, 183, 0.6),
+    0 0 16px rgba(110, 231, 183, 0.3);
+}
+
+.task-item-open .delete-btn {
+  right: 12px;
+}
+
+.task-item-open .edit-btn {
+  right: 52px;
+}
+
+.task-item-open{
+  transform: translateY(-2px);
+  box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.15),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+}
+
+.input-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.input-container input {
+  background: #f5f5f5;
+  color: #222;
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.task-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.button {
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #6C5CE7;
+  color: white;
+  cursor: pointer;
+  box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.15),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+}
+
+.button:active {
+  transform: scale(0.95);
+  background: #5a4bff;
+}
+
+.red-btn {
+  background: #ff6b6b;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow:
+      0 5px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+}
+
+.delete-btn {
+  position: absolute;
+  right: -50px;
+}
+
+.red-btn:hover {
+  background: #ff4b4b;
+}
+
+.add-button {
+  padding: 0 20px;
+}
+
+.green-btn {
+  background: #4CAF50;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1.5px 0  rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+}
+
+.edit-btn{
+  position: absolute;
+  right: -100px;
+}
+
+.green-btn:hover {
+  background: #45a049;
+}
+
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background: #7a6cff;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+  }
+
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-container button {
+    padding: 12px 0;
+  }
+
+}
