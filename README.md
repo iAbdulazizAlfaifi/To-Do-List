@@ -21,8 +21,5 @@ This project helped me practice:
 - Component structure
 - Handling user interactions
 
-## 📸 Preview
-(Add screenshot later)
-
 ## 🔗 Live Demo
 https://to-do-list-delta-ruddy-74.vercel.app/
